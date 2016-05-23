@@ -19,6 +19,7 @@ gem 'eventmachine_httpserver'
 gem 'em-http-request'
 gem 'omniauth-facebook'
 gem 'koala'
+gem 'figaro'
 
 group :production do
 	gem 'pg'
