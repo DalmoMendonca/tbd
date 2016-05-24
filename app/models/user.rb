@@ -16,6 +16,6 @@ class User < ActiveRecord::Base
 	end
 
 	def friends_count
-		facebook.get_connection("me", "friends").size
+		facebook.get_connection("me", "invitable_friends").size
 	end
 end
