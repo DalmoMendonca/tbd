@@ -3,15 +3,37 @@
 	<p>
 		<b>Incredible Facebook Quizzes</b>
 	</p>
+</div>
 
-  <p>
-  	<% if current_user %>
-  		Shady people in your life: <%= current_user.friends_count %><br>
-  		<%= current_user.homework_copier %> will copy your homework.<br>
-  		<%= current_user.love_thief %> will steal your love interest.<br>
-  		<%= current_user.family_killer %> will kill your family.<br>
-  		<%= current_user.secret_sharer %> will share your secret.<br>
-  	<% else %>
-  		<%= link_to "Find Backstabbers!", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-lg" %>
-  	<% end %>
-  </p>
+<div>
+	<% if current_user %>
+		<div>
+  		<table>
+	  		<tr>
+		  		<td>
+			  		<%= image_tag(current_user.homework_copier["picture"]["data"]["url"]) %><br>
+			  		<b><%= current_user.homework_copier["name"] %></b> will copy your homework.
+		  		</td>
+		  		<td>
+		  			<%= image_tag(current_user.love_thief["picture"]["data"]["url"]) %><br>
+		  			<b><%= current_user.love_thief %></b> will steal your love interest.
+		  		</td>
+	  		</tr>
+	  		<tr>
+		  		<td>
+		  			<%= image_tag(current_user.family_killer["picture"]["data"]["url"]) %><br>
+		  			<b><%= current_user.family_killer %></b> will kill your family.
+		  		</td>
+		  		<td>
+		  			<%= image_tag(current_user.secret_sharer["picture"]["data"]["url"]) %><br>
+		  			<b><%= current_user.secret_sharer %></b> will share your secret.
+		  		</td>
+	  		</tr>
+  		</table>
+		</div>
+	<% else %>
+		<div>
+			<%= link_to "Find Backstabbers!", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-lg" %>
+		</div>
+	<% end %>
+ </div>
