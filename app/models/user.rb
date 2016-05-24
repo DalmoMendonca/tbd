@@ -19,19 +19,10 @@ class User < ActiveRecord::Base
 		facebook.get_connection("me", "invitable_friends").size
 	end
 
-	def homework_copier
-		facebook.get_connection("me", "invitable_friends")[5]["name"]
-	end
-
-	def love_thief
-		facebook.get_connection("me", "invitable_friends")[6]["name"]
-	end
-
-	def family_killer
-		facebook.get_connection("me", "invitable_friends")[7]["name"]
-	end
-
-	def secret_sharer
-		facebook.get_connection("me", "invitable_friends")[8]["name"]
+	def backstabbers 
+		@homework_copier = facebook.get_connection("me", "invitable_friends")[5]
+		@love_thief = facebook.get_connection("me", "invitable_friends")[6]
+		@family_killer = facebook.get_connection("me", "invitable_friends")[7]
+		@secret_sharer = facebook.get_connection("me", "invitable_friends")[8]
 	end
 end
