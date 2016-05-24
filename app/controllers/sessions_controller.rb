@@ -7,9 +7,8 @@ class SessionsController < ApplicationController
     session['fb_auth'] = auth
     session['fb_access_token'] = auth['credentials']['token']
     session['fb_error'] = nil
-    redirect_to sessions_menu_path
 
-    #redirect_to root_url
+    redirect_to root_url
   end
 
   def destroy
