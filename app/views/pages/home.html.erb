@@ -10,6 +10,12 @@
 	<p>
   <%= link_to "Find Backstabbers!", "#", class: "btn btn-primary btn-lg" %>
   </p>
+
+  <p>
+  	<% if current_user %>
+  		Number of Friends: <%= current_user.friends_count%>
+  	<% end %>
+  </p>
  
 
 	<div id="status">

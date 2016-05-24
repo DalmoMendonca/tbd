@@ -8,16 +8,17 @@
 </head>
 <body>
 
-<div id="user_nav">
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
+  <%= render 'layouts/header' %>
 
-<%= yield %>
+  <div class="container">
+    <% flash.each do |name, msg, x| %>
+      <% name = name.to_s == 'alert' ? 'danger' : 'success' %>
+      <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+    <% end %>
+    <%= yield %>
+  </div>
+
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>

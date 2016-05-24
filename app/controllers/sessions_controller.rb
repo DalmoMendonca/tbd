@@ -2,7 +2,14 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-    redirect_to root_url
+
+		auth = request.env["omniauth.auth"]
+    session['fb_auth'] = auth
+    session['fb_access_token'] = auth['credentials']['token']
+    session['fb_error'] = nil
+    redirect_to sessions_menu_path
+
+    #redirect_to root_url
   end
 
   def destroy
@@ -10,9 +17,14 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
-  private
-
-  def user_params
-    params.require(:session).permit(:user_id, :code, :state, :provider, :uid, :name, :oauth_token, :oauth_expires_at)
+  def menu
+    if session["fb_access_token"].present?
+      graph = Koala::Facebook::GraphAPI.new(session["fb_access_token"]) # Note that i'm using session here
+      @profile_image = graph.get_picture("me")
+      @fbprofile = graph.get_object("me")
+      @friends = graph.get_connections("me", "friends")
+      redirect_to root_url
+    end
   end
+
 end
