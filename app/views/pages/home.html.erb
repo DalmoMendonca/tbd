@@ -11,12 +11,12 @@
   		<table>
 	  		<tr>
 		  		<td>
-			  		<%= image_tag(homework_copier_image) %><br>
-			  		<b><%= homework_copier %></b> will copy your homework.
+			  		<%= image_tag(current_user.homework_copier_image) %><br>
+			  		<b><%= current_user.homework_copier %></b> will copy your homework.
 		  		</td>
 		  		<td>
-		  			<%= image_tag(love_thief_image) %><br>
-		  			<b><%= love_thief %></b> will steal your love interest.
+		  			<%= image_tag(current_user.love_thief_image) %><br>
+		  			<b><%= current_user.love_thief %></b> will steal your love interest.
 		  		</td>
 	  		</tr>
 	  		<tr>
