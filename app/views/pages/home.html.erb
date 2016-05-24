@@ -1,12 +1,8 @@
 <div class="jumbotron">
 	<h1>TBD</h1>
 	<p>
-		Incredible Facebook Quizzes
+		<b>Incredible Facebook Quizzes</b>b>
 	</p>
-
-	<p>
-  <%= link_to "Find Backstabbers!", "#", class: "btn btn-primary btn-lg" %>
-  </p>
 
   <p>
   	<% if current_user %>
@@ -15,9 +11,7 @@
   		<%= current_user.love_thief %> will steal your love interest.<br>
   		<%= current_user.family_killer %> will kill your family.<br>
   		<%= current_user.secret_sharer %> will share your secret.<br>
+  	<% else %>
+  		<%= link_to "Find Backstabbers!", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-lg" %>
   	<% end %>
   </p>
- 
-
-	<div id="status">
-	</div>
