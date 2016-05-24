@@ -3,27 +3,21 @@
 	<p>
 		Incredible Facebook Quizzes
 	</p>
+
 	<p>
-	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-	</fb:login-button>
-	</p>
-	<p>
-  <%= link_to "Find Backstabbers!", "#", class: "btn btn-primary btn-lg" %>
+  <%= link_to_function "Find Backstabbers!", "#", class: "btn btn-primary btn-lg" %>
   </p>
 
   <p>
   	<% if current_user %>
-  		Number of Friends: <%= current_user.friends_count%>
+  		Shady people in your life: <%= current_user.friends_count %><br>
+  		<%= current_user.homework_copier %> will copy your homework.<br>
+  		<%= current_user.love_thief %> will steal your love interest.<br>
+  		<%= current_user.family_killer %> will kill your family.<br>
+  		<%= current_user.secret_sharer %> will share your secret.<br>
   	<% end %>
   </p>
  
 
 	<div id="status">
-	</div>
-
-  <div
-		  class="fb-like"
-		  data-share="true"
-		  data-width="450"
-		  data-show-faces="true">
 	</div>
