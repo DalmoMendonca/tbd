@@ -9,6 +9,11 @@
 	<% if current_user %>
 		<div>
   		<table>
+  			<tr>
+  				<td>
+  				Hello <b><%= current_user.facebook.name %></b>!
+  				</td>
+  			</tr>
 	  		<tr>
 		  		<td>
 			  		<%= image_tag(current_user.homework_copier_image) %><br>
