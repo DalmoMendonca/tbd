@@ -1,4 +1,3 @@
-
 jQuery ->
   $('body').prepend('<div id="fb-root"></div>')
 
@@ -15,7 +14,6 @@ window.fbAsyncInit = ->
     e.preventDefault()
     FB.login (response) ->
       window.location = '/auth/facebook/callback' if response.authResponse
-    , scope: "user_friends"
 
   $('#sign_out').click (e) ->
     FB.getLoginStatus (response) ->
