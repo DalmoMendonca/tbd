@@ -2,12 +2,10 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-
-		#auth = request.env["omniauth.auth"]
+    #auth = request.env["omniauth.auth"]
     #session['fb_auth'] = auth
     #session['fb_access_token'] = auth['credentials']['token']
     #session['fb_error'] = nil
-
     redirect_to root_url
   end
 
