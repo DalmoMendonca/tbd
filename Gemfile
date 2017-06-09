@@ -17,7 +17,7 @@ gem 'jquery-dotdotdot-rails'
 gem 'eventmachine'
 gem 'eventmachine_httpserver'
 gem 'em-http-request'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '~> 1.4.0'
 gem 'koala'
 gem 'figaro'
 
