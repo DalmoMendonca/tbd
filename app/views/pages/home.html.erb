@@ -49,7 +49,6 @@
 	<% else %>
 		<div>
 			<%= link_to "Find Backstabbers!", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-lg" %>
-			Hello <b><%= User.find(session[:user_id]).name %></b>!
 		</div>
 	<% end %>
  </div>
