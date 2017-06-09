@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	    user.name             = auth.info.name
 	    user.oauth_token      = auth.credentials.token #"EAACEdEose0cBADeAI3pbbXgb5md6nJciItCYNZBvdREgy5HahVWAIJ8rBD5K9D8NnZADZAz1j9ua7LmTOOhdNeLJvUV4TXwNGvV1rBmlXoRK0UYRYZBMlZADvDoXxo4SbiqAxbRwa0Tf3avxPwTayNZCD9XdqW3jlvppCOEcNfRQZDZD" 
 	    user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-	    user.save
+	    user.save!
 	  end
 	end
 
