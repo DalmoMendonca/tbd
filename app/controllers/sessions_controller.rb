@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
       @profile_image = graph.get_picture("me")
       @fbprofile = graph.get_object("me")
       @friends = graph.get_connections("me", "friends")
+      @friendsnumber = graph.get_connections("me", "friends").size
       redirect_to root_url
     end
   end
