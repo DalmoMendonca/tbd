@@ -6,7 +6,7 @@
 </div>
 
 <div>
-	<% if current_user %>
+	<% if user_signed_in? && current_user.provider=='facebook' %>
 		<div>
   		<table>
   			<tr>
