@@ -7,8 +7,8 @@
 
 
 <div id="user_nav">
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
+  <% if session[:user_id] %>
+    Signed in as <strong><%= "dude" %></strong>!
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
@@ -24,26 +24,6 @@
   				Hello <b><%= current_user.name %></b>!
   				</td>
   			</tr>
-	  		<tr>
-		  		<td>
-			  		<%= image_tag(current_user.homework_copier_image) %><br>
-			  		<b><%= current_user.homework_copier %></b> will copy your homework.
-		  		</td>
-		  		<td>
-		  			<%= image_tag(current_user.love_thief_image) %><br>
-		  			<b><%= current_user.love_thief %></b> will steal your love interest.
-		  		</td>
-	  		</tr>
-	  		<tr>
-		  		<td>
-		  			<%= image_tag(current_user.family_killer_image) %><br>
-		  			<b><%= current_user.family_killer %></b> will kill your family.
-		  		</td>
-		  		<td>
-		  			<%= image_tag(current_user.secret_sharer_image) %><br>
-		  			<b><%= current_user.secret_sharer %></b> will share your secret.
-		  		</td>
-	  		</tr>
   		</table>
 		</div>
 	<% else %>
