@@ -107,6 +107,6 @@ window.fbAsyncInit = function() {
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'We see you, ' + response.name + '! You sexy beast, you.';
+        'We see you, ' + response.name + '. You have ' + response.friends.size + ' friends';
     });
   }
