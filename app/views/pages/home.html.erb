@@ -7,7 +7,7 @@
 
 
 <div id="user_nav">
-  <% if User.first %>
+  <% if current_user %>
     Signed in as <strong><%= "dude" %></strong>!
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
