@@ -19,12 +19,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 user_nav">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <% if current_user %>
-            <%= link_to "Sign out from " + current_user.name + "'s account", signout_path, id: "sign_out" %>
-          <% else %>
-            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-          <% end %>
+        <li id="status">
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
